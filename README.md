@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/charcoal.mini.svg)](https://badge.fury.io/js/charcoal.mini)
 
 > **Note**
-> This is a not a official product and highly experimental.
+> This is not an official product and highly experimental.
 
 CSS only library for easy styling
 
