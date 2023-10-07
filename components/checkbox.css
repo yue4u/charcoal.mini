@@ -1,0 +1,101 @@
+.ch-checkbox {
+  cursor: pointer;
+  gap: 4px;
+  display: flex;
+  position: relative;
+}
+.ch-checkbox:disabled,
+.ch-checkbox[aria-disabled]:not([aria-disabled="false"]) {
+  cursor: default;
+  opacity: 0.32;
+}
+.ch-checkbox-input-container {
+  position: relative;
+}
+.ch-checkbox-input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  display: block;
+  transition: all 0.2s !important;
+}
+.ch-checkbox-input[type="checkbox"]:checked {
+  background-color: var(--charcoal-brand);
+  transition: background-color 0.2s;
+}
+.ch-checkbox-input[type="checkbox"]:checked:hover:not(:disabled):not(
+    [aria-disabled]
+  ),
+.ch-checkbox-input[type="checkbox"]:checked:hover[aria-disabled="false"] {
+  background-color: var(--charcoal-brand-hover);
+}
+.ch-checkbox-input[type="checkbox"]:checked:active:not(:disabled):not(
+    [aria-disabled]
+  ),
+.ch-checkbox-input[type="checkbox"]:checked:active[aria-disabled="false"] {
+  background-color: var(--charcoal-brand-press);
+}
+.ch-checkbox-input[type="checkbox"]:not(:checked) {
+  border: 2px solid #adadad;
+}
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not([aria-disabled]):focus,
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus,
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not([aria-disabled]):active,
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not(
+    [aria-disabled]
+  ):focus:not(:focus-visible),
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus:not(
+    :focus-visible
+  ),
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not(
+    [aria-disabled]
+  ):active:not(:focus-visible),
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:active:not(
+    :focus-visible
+  ) {
+  outline: none;
+}
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not(
+    [aria-disabled]
+  ):focus-visible,
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-checkbox-icon-hide {
+  box-sizing: border-box;
+  color: var(--charcoal-text5);
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+.ch-checkbox-text {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+.ch-checkbox-icon {
+  box-sizing: border-box;
+  color: var(--charcoal-text5);
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}

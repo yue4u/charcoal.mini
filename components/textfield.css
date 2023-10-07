@@ -1,0 +1,203 @@
+.ch-textfield-label {
+  color: var(--charcoal-text1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  display: flow-root;
+}
+.ch-textfield-label:before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  display: block;
+}
+.ch-textfield-label:after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-bottom: -4px;
+  display: block;
+}
+.ch-textfield-required {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+}
+.ch-textfield-required:before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  display: block;
+}
+.ch-textfield-required:after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-bottom: -4px;
+  display: block;
+}
+.ch-textfield-sub-label {
+  color: var(--charcoal-text3);
+  font-size: 14px;
+  line-height: 22px;
+  transition:
+    color 0.2s,
+    box-shadow 0.2s;
+  display: flow-root;
+}
+.ch-textfield-sub-label:before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  display: block;
+}
+.ch-textfield-sub-label:after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-bottom: -4px;
+  display: block;
+}
+.ch-textfield-sub-label:hover:not(:disabled):not([aria-disabled]),
+.ch-textfield-sub-label:hover[aria-disabled="false"] {
+  color: var(--charcoal-text3-hover);
+}
+.ch-textfield-sub-label:active:not(:disabled):not([aria-disabled]),
+.ch-textfield-sub-label:active[aria-disabled="false"] {
+  color: var(--charcoal-text3-press);
+}
+.ch-textfield-sub-label:not(:disabled):not([aria-disabled]):focus,
+.ch-textfield-sub-label[aria-disabled="false"]:focus,
+.ch-textfield-sub-label:not(:disabled):not([aria-disabled]):active,
+.ch-textfield-sub-label[aria-disabled="false"]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-textfield-sub-label:not(:disabled):not([aria-disabled]):focus:not(
+    :focus-visible
+  ),
+.ch-textfield-sub-label[aria-disabled="false"]:focus:not(:focus-visible),
+.ch-textfield-sub-label:not(:disabled):not([aria-disabled]):active:not(
+    :focus-visible
+  ),
+.ch-textfield-sub-label[aria-disabled="false"]:active:not(:focus-visible) {
+  outline: none;
+}
+.ch-textfield-sub-label:not(:disabled):not([aria-disabled]):focus-visible,
+.ch-textfield-sub-label[aria-disabled="false"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-textfield-label-container {
+  align-items: center;
+  display: inline-flex;
+}
+.ch-textfield-label-container > .ch-textfield-required {
+  margin-left: 4px;
+}
+.ch-textfield-label-container > .ch-textfield-sub-label {
+  margin-left: auto;
+}
+.ch-textfield {
+  flex-direction: column;
+  display: flex;
+}
+.ch-textfield-label-container {
+  margin-bottom: 8px;
+}
+.ch-textfield-input-container {
+  height: 40px;
+  display: grid;
+  position: relative;
+}
+.ch-textfield-input {
+  box-sizing: border-box;
+  transform-origin: 0 0;
+  appearance: none;
+  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+  border: none;
+  border-radius: 4.57143px;
+  outline: none;
+  width: 114.286%;
+  height: 114.286%;
+  padding-left: 9.14286px;
+  padding-right: 9.14286px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 25.1429px;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+  transform: scale(0.875);
+}
+.ch-textfield-input:hover:not(:disabled):not([aria-disabled]),
+.ch-textfield-input:hover[aria-disabled="false"] {
+  background-color: var(--charcoal-surface3-hover);
+}
+.ch-textfield-input:not(:disabled):not([aria-disabled]):focus,
+.ch-textfield-input[aria-disabled="false"]:focus,
+.ch-textfield-input:not(:disabled):not([aria-disabled]):active,
+.ch-textfield-input[aria-disabled="false"]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-textfield-input:not(:disabled):not([aria-disabled]):focus:not(
+    :focus-visible
+  ),
+.ch-textfield-input[aria-disabled="false"]:focus:not(:focus-visible),
+.ch-textfield-input:not(:disabled):not([aria-disabled]):active:not(
+    :focus-visible
+  ),
+.ch-textfield-input[aria-disabled="false"]:active:not(:focus-visible) {
+  outline: none;
+}
+.ch-textfield-input:not(:disabled):not([aria-disabled]):focus-visible,
+.ch-textfield-input[aria-disabled="false"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-textfield-input::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+.ch-textfield-input::placeholder {
+  color: var(--charcoal-text3);
+}
+.ch-textfield-assistive-text {
+  color: var(--charcoal-text1);
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+}
+.ch-textfield-assistive-text:before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  display: block;
+}
+.ch-textfield-assistive-text:after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-bottom: -4px;
+  display: block;
+}
+.ch-textfield-input.invalid:not(:disabled):not([aria-disabled]),
+.ch-textfield-input.invalid[aria-disabled="false"] {
+  box-shadow: 0 0 0 4px #ff2b0052;
+}
+.ch-textfield-assistive-text.invalid {
+  color: var(--charcoal-assertive);
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+}

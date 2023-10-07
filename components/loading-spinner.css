@@ -1,0 +1,32 @@
+.ch-loading-spinner {
+  box-sizing: content-box;
+  opacity: 0.84;
+  color: var(--charcoal-text4);
+  background-color: var(--charcoal-background1);
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  padding: 16px;
+  font-size: 48px;
+}
+.ch-loading-spinner-bubble {
+  background-color: currentColor;
+  border-radius: 1em;
+  width: 1em;
+  height: 1em;
+  animation: 1s ease-out infinite both spin;
+}
+.ch-loading-spinner-bubble[data-reset-animation] {
+  animation: auto ease 0s 1 normal none running none;
+}
+@keyframes spin {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

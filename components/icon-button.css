@@ -1,0 +1,84 @@
+.ch-icon-button {
+  appearance: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  text-transform: none;
+  cursor: pointer;
+  background: 0 0;
+  border-style: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+.ch-icon-button:focus {
+  outline: none;
+}
+.ch-icon-button:disabled,
+.ch-icon-button[aria-disabled]:not([aria-disabled="false"]) {
+  cursor: default;
+}
+.ch-icon-button {
+  user-select: none;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+}
+.ch-icon-button:hover:not(:disabled):not([aria-disabled]),
+.ch-icon-button:hover[aria-disabled="false"] {
+  background-color: var(--charcoal-transparent-hover);
+}
+.ch-icon-button:active:not(:disabled):not([aria-disabled]),
+.ch-icon-button:active[aria-disabled="false"] {
+  background-color: var(--charcoal-transparent-press);
+}
+.ch-icon-button:disabled,
+.ch-icon-button[aria-disabled]:not([aria-disabled="false"]) {
+  opacity: 0.32;
+}
+.ch-icon-button:not(:disabled):not([aria-disabled]):focus,
+.ch-icon-button[aria-disabled="false"]:focus,
+.ch-icon-button:not(:disabled):not([aria-disabled]):active,
+.ch-icon-button[aria-disabled="false"]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-icon-button:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.ch-icon-button[aria-disabled="false"]:focus:not(:focus-visible),
+.ch-icon-button:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.ch-icon-button[aria-disabled="false"]:active:not(:focus-visible) {
+  outline: none;
+}
+.ch-icon-button:not(:disabled):not([aria-disabled]):focus-visible,
+.ch-icon-button[aria-disabled="false"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-icon-button.size-xs {
+  width: 20px;
+  height: 20px;
+}
+.ch-icon-button.size-s {
+  width: 32px;
+  height: 32px;
+}
+
+.ch-icon-button.overlay {
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-surface4);
+}
+.ch-icon-button.overlay:hover:not(:disabled):not([aria-disabled]),
+.ch-icon-button.overlay:hover[aria-disabled="false"] {
+  background-color: var(--charcoal-surface4-hover);
+}

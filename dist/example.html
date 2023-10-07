@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+
+        padding: 0 16px;
+        --shiki-token-string-expression: var(--charcoal-brand);
+        --shiki-token-function: var(--charcoal-link1);
+        --shiki-color-background: var(--charcoal-background2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      pre {
+        &.shiki.css-variables {
+          padding: 8px;
+          border-radius: 4px;
+          white-space: pre-wrap;
+        }
+
+        &:has(+ div[data-query]) {
+          grid-column: span 2;
+        }
+      }
+
+      span[style="color: var(--shiki-token-string-expression)"] {
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      span[style="color: var(--shiki-color-text)"] + span {
+        --shiki-token-string-expression: var(--charcoal-assertive);
+        background: unset;
+        font-weight: unset;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      section {
+        display: grid;
+        gap: 8px 16px;
+        align-items: center;
+        grid-template-columns: 70% 30%;
+
+        & h2 {
+          grid-column: span 2;
+        }
+
+        @media screen and (width < 760px) {
+          & {
+            grid-template-columns: 1fr;
+          }
+
+          & h2 {
+            grid-column: unset;
+          }
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./charcoal.mini.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "warning": "https://esm.sh/warning@4.0.3",
+          "@charcoal-ui/icon-files": "https://unpkg.com/@charcoal-ui/icon-files@3.3.0/src/index.js",
+          "dompurify": "https://unpkg.com/dompurify@3.0.6/dist/purify.es.js"
+        }
+      }
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/@charcoal-ui/icons@3.3.0/dist/index.esm.js"
+    ></script>
+  </head>
+
+  <body>
+    <header><h1>Charcoal.mini</h1></header>
+    <main>
+      <section>
+        <h2>import</h2>
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">link</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">rel</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;stylesheet&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">href</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;./charcoal.mini.css&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">script</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;importmap&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &quot;imports&quot;: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &quot;warning&quot;: &quot;https://esm.sh/warning@4.0.3&quot;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &quot;@charcoal-ui/icon-files&quot;: &quot;https://unpkg.com/@charcoal-ui/icon-files@3.3.0/src/index.js&quot;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &quot;dompurify&quot;: &quot;https://unpkg.com/dompurify@3.0.6/dist/purify.es.js&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">script</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">script</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;module&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  </span><span style="color: var(--shiki-token-function)">src</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;https://unpkg.com/@charcoal-ui/icons@3.3.0/dist/index.esm.js&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">script</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div data-query="head link,head script"></div>
+      </section>
+      <section>
+        <h2>.ch-button</h2>
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button primary&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button primary">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button primary&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button primary" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button overlay&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button overlay">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button overlay&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button overlay" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button danger&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button danger">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button danger&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button danger" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button navigation&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button navigation">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button navigation&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button navigation" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button size-s&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button size-s">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button size-s&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button size-s" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button primary size-s&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button primary size-s">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button primary size-s&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button primary size-s" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button fullwidth&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button fullwidth">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button fullwidth&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button fullwidth" disabled>button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button fullwidth primary&quot;</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button fullwidth primary">button</button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button fullwidth primary&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;button&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-button fullwidth primary" disabled>button</button>
+      </section>
+
+      <section>
+        <h2>.ch-icon-button</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button">
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button" disabled>
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button size-s&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button size-s">
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button size-xs&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;16/Remove&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button size-xs">
+          <pixiv-icon name="16/Remove"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button overlay&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button overlay">
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button overlay&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button overlay" disabled>
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button overlay size-s&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button overlay size-s">
+          <pixiv-icon name="24/Close"></pixiv-icon>
+        </button>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-icon-button overlay size-xs&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;16/Remove&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <button class="ch-icon-button overlay size-xs">
+          <pixiv-icon name="16/Remove"></pixiv-icon>
+        </button>
+      </section>
+
+      <section>
+        <h2>.ch-textfield</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textfield">
+          <div class="ch-textfield-input-container">
+            <input class="ch-textfield-input" placeholder="input..." />
+          </div>
+        </div>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textfield">
+          <div class="ch-textfield-input-container">
+            <input class="ch-textfield-input" disabled placeholder="input..." />
+          </div>
+        </div>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; Label &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-required&quot;</span><span style="color: var(--shiki-color-text)">&gt; Required &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-sub-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; sub-label &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-assistive-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Assistive text&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textfield">
+          <div class="ch-textfield-label-container">
+            <label class="ch-textfield-label"> Label </label>
+            <span class="ch-textfield-required"> Required </span>
+            <span class="ch-textfield-sub-label"> sub-label </span>
+          </div>
+
+          <div class="ch-textfield-input-container">
+            <!-- <span class="ch-textfield-prefix-container">
+                      <span class="ch-textfield-surround">/home/</span>
+                  </span> -->
+            <!-- <input class="ch-textfield-input" style="padding-left: 55px;" placeholder="input..."> -->
+            <input class="ch-textfield-input" placeholder="input..." />
+            <!-- <span class="ch-textfield-suffix-container">
+                      <span class="ch-textfield-surround">prefix</span>
+                      <span class="ch-textfield-count">0/100</span>
+                  </span> -->
+          </div>
+
+          <span class="ch-textfield-assistive-text">Assistive text</span>
+        </div>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input invalid&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-assistive-text invalid&quot;</span><span style="color: var(--shiki-color-text)">&gt;Assistive text&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textfield">
+          <div class="ch-textfield-input-container">
+            <input class="ch-textfield-input invalid" placeholder="input..." />
+          </div>
+
+          <span class="ch-textfield-assistive-text invalid"
+            >Assistive text</span
+          >
+        </div>
+      </section>
+
+      <section>
+        <h2>.ch-textarea</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-textarea&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textarea">
+          <div class="ch-textarea-container">
+            <textarea
+              class="ch-textarea-textarea"
+              placeholder="input..."
+            ></textarea>
+          </div>
+        </div>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; Label &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-required&quot;</span><span style="color: var(--shiki-color-text)">&gt; Required &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-sub-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; sub-label &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-textarea&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-count&quot;</span><span style="color: var(--shiki-color-text)">&gt;0/100&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-assistive-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Assistive text&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textarea">
+          <div class="ch-textfield-label-container">
+            <label class="ch-textfield-label"> Label </label>
+            <span class="ch-textfield-required"> Required </span>
+            <span class="ch-textfield-sub-label"> sub-label </span>
+          </div>
+
+          <div class="ch-textarea-container">
+            <textarea
+              class="ch-textarea-textarea"
+              placeholder="input..."
+            ></textarea>
+            <span class="ch-textarea-count">0/100</span>
+          </div>
+
+          <span class="ch-textarea-assistive-text">Assistive text</span>
+        </div>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; Label &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-required&quot;</span><span style="color: var(--shiki-color-text)">&gt; Required &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-sub-label&quot;</span><span style="color: var(--shiki-color-text)">&gt; sub-label &lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-container invalid&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-textarea&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">textarea</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-count&quot;</span><span style="color: var(--shiki-color-text)">&gt;0/100&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textarea-assistive-text invalid&quot;</span><span style="color: var(--shiki-color-text)">&gt;Assistive text&lt;/</span><span style="color: var(--shiki-token-string-expression)">span</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-textarea">
+          <div class="ch-textfield-label-container">
+            <label class="ch-textfield-label"> Label </label>
+            <span class="ch-textfield-required"> Required </span>
+            <span class="ch-textfield-sub-label"> sub-label </span>
+          </div>
+
+          <div class="ch-textarea-container invalid">
+            <textarea
+              class="ch-textarea-textarea"
+              placeholder="input..."
+            ></textarea>
+            <span class="ch-textarea-count">0/100</span>
+          </div>
+
+          <span class="ch-textarea-assistive-text invalid">Assistive text</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>.ch-radio-group</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-group&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">role</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radiogroup&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">value</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;1&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;1&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">value</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;2&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;2&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">aria-disabled</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-input&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      </span><span style="color: var(--shiki-token-function)">disabled</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;radio&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      </span><span style="color: var(--shiki-token-function)">value</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;3&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-radio-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;3&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-radio-group" role="radiogroup">
+          <label class="ch-radio">
+            <input class="ch-radio-input" type="radio" name="radio" value="1" />
+            <div class="ch-radio-text">1</div>
+          </label>
+
+          <label class="ch-radio">
+            <input class="ch-radio-input" type="radio" name="radio" value="2" />
+            <div class="ch-radio-text">2</div>
+          </label>
+
+          <label class="ch-radio" aria-disabled>
+            <input
+              class="ch-radio-input"
+              disabled
+              type="radio"
+              name="radio"
+              value="3"
+            />
+            <div class="ch-radio-text">3</div>
+          </label>
+        </div>
+      </section>
+
+      <section>
+        <h2>.ch-checkbox</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;checkbox&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ok&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">checked</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-icon&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Check&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Agree to ToS&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <label class="ch-checkbox">
+          <div class="ch-checkbox-input-container">
+            <input
+              class="ch-checkbox-input"
+              type="checkbox"
+              name="ok"
+              checked
+            />
+            <div class="ch-checkbox-icon">
+              <pixiv-icon name="24/Check"></pixiv-icon>
+            </div>
+          </div>
+          <div class="ch-checkbox-text">Agree to ToS</div>
+        </label>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;checkbox&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ok&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-icon-hide&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Check&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Agree to ToS&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <label class="ch-checkbox">
+          <div class="ch-checkbox-input-container">
+            <input class="ch-checkbox-input" type="checkbox" name="ok" />
+            <div class="ch-checkbox-icon-hide">
+              <pixiv-icon name="24/Check"></pixiv-icon>
+            </div>
+          </div>
+          <div class="ch-checkbox-text">Agree to ToS</div>
+        </label>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">aria-disabled</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;checkbox&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ok&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-icon&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">aria-hidden</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;true&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Check&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-checkbox-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Agree to ToS&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <label class="ch-checkbox" aria-disabled>
+          <div class="ch-checkbox-input-container">
+            <input
+              class="ch-checkbox-input"
+              type="checkbox"
+              name="ok"
+              disabled
+            />
+            <div class="ch-checkbox-icon" aria-hidden="true">
+              <pixiv-icon name="24/Check"></pixiv-icon>
+            </div>
+          </div>
+          <div class="ch-checkbox-text">Agree to ToS</div>
+        </label>
+      </section>
+
+      <section>
+        <h2>.ch-switch</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;checkbox&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Agree to ToS&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <label class="ch-switch">
+          <input class="ch-switch-input" type="checkbox" />
+          <div class="ch-switch-text">Agree to ToS</div>
+        </label>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">aria-disabled</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch-input&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;checkbox&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">disabled</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-switch-text&quot;</span><span style="color: var(--shiki-color-text)">&gt;Agree to ToS&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">label</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <label class="ch-switch" aria-disabled>
+          <input class="ch-switch-input" type="checkbox" disabled />
+          <div class="ch-switch-text">Agree to ToS</div>
+        </label>
+      </section>
+
+      <section>
+        <h2>.ch-loading-spinner</h2>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-loading-spinner&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">role</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;progressbar&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-loading-spinner-bubble&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"></span></code></pre>
+        <div class="ch-loading-spinner" role="progressbar">
+          <div class="ch-loading-spinner-bubble"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
