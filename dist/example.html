@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Charcoal.mini</title>
     <style>
       :root {
         font-family:
@@ -52,7 +52,9 @@
         font-weight: bold;
       }
 
-      span[style="color: var(--shiki-color-text)"] + span {
+      pre:not(:has(+ div[data-content]))
+        span[style="color: var(--shiki-color-text)"]
+        + span {
         --shiki-token-string-expression: var(--charcoal-assertive);
         background: unset;
         font-weight: unset;
