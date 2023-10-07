@@ -23,26 +23,51 @@ test("example", async ({ page }, testInfo) => {
     await Promise.all(
       example.querySelectorAll("pre").map(async (pre) => {
         const query = pre.nextElementSibling.getAttribute("data-query");
-        return [
-          pre,
-          highlighter.codeToHtml(
-            await prettier.format(
-              parse(
-                query
-                  ? example
-                      .querySelectorAll(query)
-                      .map((e) => e.outerHTML)
-                      .join("\n")
-                  : pre.nextElementSibling.outerHTML,
-                { comment: false }
-              ).outerHTML,
-              {
-                parser: "html",
-              }
-            ),
+        const content = pre.nextElementSibling.getAttribute("data-content");
+
+        let html: string;
+        let parser = "html";
+        if (query) {
+          const source = example
+            .querySelectorAll(query)
+            .map((e) => e.outerHTML)
+            .join("\n")
+            .replace(
+              "./charcoal.mini.css",
+              "https://unpkg.com/charcoal.mini/dist/charcoal.mini.css"
+            );
+          html = highlighter.codeToHtml(
+            await prettier.format(parse(source, { comment: false }).outerHTML, {
+              parser: "html",
+            }),
             { lang: "html" }
-          ),
-        ] as const;
+          );
+        } else if (content) {
+          const lang = pre.nextElementSibling.getAttribute("data-lang");
+          if (lang) {
+            html = highlighter.codeToHtml(
+              await prettier.format(
+                parse(content, { comment: false }).outerHTML,
+                {
+                  parser: lang,
+                }
+              ),
+              { lang }
+            );
+          } else {
+            throw new Error(`expect lang for ${content}`);
+          }
+        } else {
+          const source = pre.nextElementSibling.outerHTML;
+          html = highlighter.codeToHtml(
+            await prettier.format(parse(source, { comment: false }).outerHTML, {
+              parser: "html",
+            }),
+            { lang: "html" }
+          );
+        }
+
+        return [pre, html] as const;
       })
     )
   ).forEach(([pre, html]) => {
@@ -54,15 +79,15 @@ test("example", async ({ page }, testInfo) => {
     await fs.writeFile(exampledPath, result, "utf-8");
   } else {
     expect(exampleHtml).toBe(result);
-
-    await page.route(
-      (url) => url.pathname.endsWith("css"),
-      (route) => route.fulfill({ body: charcoalMini, contentType: "text/css" })
-    );
-    await page.setContent(exampleHtml);
-
-    expect(
-      await page.screenshot({ fullPage: true, animations: "disabled" })
-    ).toMatchSnapshot();
   }
+
+  await page.route(
+    (url) => url.pathname.endsWith("css"),
+    (route) => route.fulfill({ body: charcoalMini, contentType: "text/css" })
+  );
+  await page.setContent(exampleHtml);
+
+  expect(
+    await page.screenshot({ fullPage: true, animations: "disabled" })
+  ).toMatchSnapshot();
 });

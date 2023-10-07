@@ -16,6 +16,7 @@
         --shiki-token-string-expression: var(--charcoal-brand);
         --shiki-token-function: var(--charcoal-link1);
         --shiki-color-background: var(--charcoal-background2);
+        --shiki-token-comment: var(--charcoal-text3);
       }
 
       * {
@@ -27,11 +28,23 @@
           padding: 8px;
           border-radius: 4px;
           white-space: pre-wrap;
+          word-break: break-word;
         }
 
-        &:has(+ div[data-query]) {
+        &:has(+ [data-query]),
+        &:has(+ [data-content]) {
           grid-column: span 2;
+
+          @media screen and (width < 760px) {
+            & {
+              grid-column: span 1;
+            }
+          }
         }
+      }
+
+      [data-content] {
+        display: none;
       }
 
       span[style="color: var(--shiki-token-string-expression)"] {
@@ -62,6 +75,12 @@
         & h2 {
           grid-column: span 2;
         }
+        & h3 {
+          grid-column: span 2;
+        }
+        & h4 {
+          grid-column: span 2;
+        }
 
         @media screen and (width < 760px) {
           & {
@@ -69,7 +88,13 @@
           }
 
           & h2 {
-            grid-column: unset;
+            grid-column: span 1;
+          }
+          & h3 {
+            grid-column: span 1;
+          }
+          & h4 {
+            grid-column: span 1;
           }
         }
       }
@@ -95,11 +120,39 @@
     <main>
       <section>
         <h2>import</h2>
+
+        <h3>Via npm</h3>
+
         <pre
           class="shiki css-variables"
           style="background-color: var(--shiki-color-background)"
           tabindex="0"
-        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">link</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">rel</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;stylesheet&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">href</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;./charcoal.mini.css&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">pnpm add charcoal.mini</span></span>
+<span class="line"></span></code></pre>
+        <div data-lang="markdown" data-content="pnpm add charcoal.mini"></div>
+
+        <h4>inside main.js</h4>
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-token-keyword)">import</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-string-expression)">&quot;charcoal.mini&quot;</span><span style="color: var(--shiki-color-text)">;</span></span>
+<span class="line"></span></code></pre>
+        <div
+          data-lang="typescript"
+          data-content="import 'charcoal.mini';"
+        ></div>
+
+        <h3>Via CDN</h3>
+
+        <pre
+          class="shiki css-variables"
+          style="background-color: var(--shiki-color-background)"
+          tabindex="0"
+        ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">link</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  </span><span style="color: var(--shiki-token-function)">rel</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;stylesheet&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  </span><span style="color: var(--shiki-token-function)">href</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;https://unpkg.com/charcoal.mini/dist/charcoal.mini.css&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">script</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">type</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;importmap&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">  {</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">    &quot;imports&quot;: {</span></span>
