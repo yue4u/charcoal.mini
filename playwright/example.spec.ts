@@ -19,6 +19,12 @@ test("example", async ({ page }, testInfo) => {
     theme: "css-variables",
   });
 
+  example.querySelectorAll("section h2").forEach((title) => {
+    if (title.textContent.startsWith(".")) {
+      title.setAttribute("id", title.textContent.slice(1));
+    }
+  });
+
   (
     await Promise.all(
       example.querySelectorAll("pre").map(async (pre) => {
