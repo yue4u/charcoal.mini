@@ -78,9 +78,7 @@ export const collector = {
         }
       }
 
-      const nodeClasss = Array.from(
-        document.querySelector("#root")?.querySelectorAll("*") ?? []
-      )
+      const nodeClasss = Array.from(document.body?.querySelectorAll("*") ?? [])
         .map((e) => {
           return Array.from(e.classList);
         })
@@ -143,6 +141,7 @@ export const collector = {
   ) {
     const browserStyles = await collector.getBrowserStyles(component);
     const classMap = collector.scToCleanMap(browserStyles.scNames, cleanNames);
+    // console.log({ classMap, browserStyles });
 
     return {
       browserStyles,
