@@ -27,7 +27,6 @@ test("Modal", async ({ mount, page }) => {
   );
   const cleanNames = [
     "ch-modal",
-    "ch-modal-dialog-container",
     "ch-modal-dialog",
     "ch-modal-body",
     "ch-modal-header",
@@ -36,8 +35,8 @@ test("Modal", async ({ mount, page }) => {
     "ch-modal-close",
   ];
   const base = await collector.getStyleWithCleanNames(component, cleanNames);
-
-  expect(base.browserStyles.scNames.length).toBe(8);
+  
+  expect(base.browserStyles.scNames.length).toBe(cleanNames.length);
 
   const cssCode: Uint8Array[] = [base.code];
 

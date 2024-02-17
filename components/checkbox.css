@@ -19,32 +19,28 @@
   width: 20px;
   height: 20px;
   margin: 0;
+  transition:
+    box-shadow 0.2s,
+    background-color 0.2s;
   display: block;
-  transition: all 0.2s !important;
 }
 .ch-checkbox-input[type="checkbox"]:checked {
   background-color: var(--charcoal-brand);
-  transition: background-color 0.2s;
 }
-.ch-checkbox-input[type="checkbox"]:checked:hover:not(:disabled):not(
+.ch-checkbox-input[type="checkbox"]:checked:not(:disabled):not(
     [aria-disabled]
-  ),
-.ch-checkbox-input[type="checkbox"]:checked:hover[aria-disabled="false"] {
+  ):hover,
+.ch-checkbox-input[type="checkbox"]:checked[aria-disabled="false"]:hover {
   background-color: var(--charcoal-brand-hover);
 }
-.ch-checkbox-input[type="checkbox"]:checked:active:not(:disabled):not(
+.ch-checkbox-input[type="checkbox"]:checked:not(:disabled):not(
     [aria-disabled]
-  ),
-.ch-checkbox-input[type="checkbox"]:checked:active[aria-disabled="false"] {
+  ):active,
+.ch-checkbox-input[type="checkbox"]:checked[aria-disabled="false"]:active {
   background-color: var(--charcoal-brand-press);
 }
-.ch-checkbox-input[type="checkbox"]:not(:checked) {
-  border: 2px solid #adadad;
-}
 .ch-checkbox-input[type="checkbox"]:not(:disabled):not([aria-disabled]):focus,
-.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus,
-.ch-checkbox-input[type="checkbox"]:not(:disabled):not([aria-disabled]):active,
-.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:active {
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus {
   outline: none;
   box-shadow: 0 0 0 4px #0096fa52;
 }
@@ -53,21 +49,25 @@
   ):focus:not(:focus-visible),
 .ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus:not(
     :focus-visible
-  ),
-.ch-checkbox-input[type="checkbox"]:not(:disabled):not(
-    [aria-disabled]
-  ):active:not(:focus-visible),
-.ch-checkbox-input[type="checkbox"][aria-disabled="false"]:active:not(
-    :focus-visible
   ) {
-  outline: none;
+  box-shadow: none;
 }
 .ch-checkbox-input[type="checkbox"]:not(:disabled):not(
     [aria-disabled]
   ):focus-visible,
 .ch-checkbox-input[type="checkbox"][aria-disabled="false"]:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-checkbox-input[type="checkbox"]:not(:disabled):not(
+    [aria-disabled]
+  )[aria-invalid="true"],
+.ch-checkbox-input[type="checkbox"][aria-disabled="false"][aria-invalid="true"] {
+  box-shadow: 0 0 0 4px #ff2b0052;
+}
+.ch-checkbox-input[type="checkbox"]:not(:checked) {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--charcoal-text4);
 }
 .ch-checkbox-icon-hide {
   box-sizing: border-box;

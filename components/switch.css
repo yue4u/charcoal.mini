@@ -8,12 +8,6 @@
 .ch-switch:disabled,
 .ch-switch[aria-disabled]:not([aria-disabled="false"]) {
   opacity: 0.32;
-}
-.ch-switch:active > input {
-  box-shadow: 0 0 0 4px #0096fa52;
-}
-.ch-switch:disabled,
-.ch-switch[aria-disabled]:not([aria-disabled="false"]) {
   cursor: default;
 }
 .ch-switch-text {
@@ -45,6 +39,13 @@
   background-color: var(--charcoal-text4-press);
 }
 .ch-switch-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-switch-input:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+.ch-switch-input:focus-visible {
   box-shadow: 0 0 0 4px #0096fa52;
 }
 .ch-switch-input:after {

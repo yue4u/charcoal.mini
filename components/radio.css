@@ -19,33 +19,51 @@
   height: 20px;
   margin: 0;
   padding: 6px;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
   display: block;
-  transition: all 0.2s !important;
 }
-.ch-radio-input[type="radio"]:hover:not(:disabled):not([aria-disabled]),
-.ch-radio-input[type="radio"]:hover[aria-disabled="false"] {
+.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):hover,
+.ch-radio-input[type="radio"][aria-disabled="false"]:hover {
   background-color: var(--charcoal-surface1-hover);
 }
-.ch-radio-input[type="radio"]:active:not(:disabled):not([aria-disabled]),
-.ch-radio-input[type="radio"]:active[aria-disabled="false"] {
+.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):active,
+.ch-radio-input[type="radio"][aria-disabled="false"]:active {
   background-color: var(--charcoal-surface1-press);
 }
+.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus,
+.ch-radio-input[type="radio"][aria-disabled="false"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus:not(
+    :focus-visible
+  ),
+.ch-radio-input[type="radio"][aria-disabled="false"]:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus-visible,
+.ch-radio-input[type="radio"][aria-disabled="false"]:focus-visible {
+  box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-radio-input[type="radio"]:not(:disabled):not(
+    [aria-disabled]
+  )[aria-invalid="true"],
+.ch-radio-input[type="radio"][aria-disabled="false"][aria-invalid="true"],
+.ch-radio-input[type="radio"]:not(:disabled):not(
+    [aria-disabled]
+  )[aria-invalid="true"]:focus,
+.ch-radio-input[type="radio"][aria-disabled="false"][aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 4px #ff2b0052;
+}
 .ch-radio-input[type="radio"]:not(:checked) {
-  border: 2px solid #858585;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--charcoal-text3);
 }
 .ch-radio-input[type="radio"]:checked {
   background-color: var(--charcoal-brand);
-  transition: background-color 0.2s;
-}
-.ch-radio-input[type="radio"]:checked:hover:not(:disabled):not([aria-disabled]),
-.ch-radio-input[type="radio"]:checked:hover[aria-disabled="false"] {
-  background-color: var(--charcoal-brand-hover);
-}
-.ch-radio-input[type="radio"]:checked:active:not(:disabled):not(
-    [aria-disabled]
-  ),
-.ch-radio-input[type="radio"]:checked:active[aria-disabled="false"] {
-  background-color: var(--charcoal-brand-press);
 }
 .ch-radio-input[type="radio"]:checked:after {
   content: "";
@@ -54,32 +72,32 @@
   border-radius: 999999px;
   width: 8px;
   height: 8px;
-  transition: background-color 0.2s;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
   display: block;
 }
-.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus,
-.ch-radio-input[type="radio"][aria-disabled="false"]:focus,
-.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):active,
-.ch-radio-input[type="radio"][aria-disabled="false"]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px #0096fa52;
+.ch-radio-input[type="radio"]:checked:not(:disabled):not([aria-disabled]):hover,
+.ch-radio-input[type="radio"]:checked[aria-disabled="false"]:hover {
+  background-color: var(--charcoal-brand-hover);
 }
-.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus:not(
-    :focus-visible
-  ),
-.ch-radio-input[type="radio"][aria-disabled="false"]:focus:not(:focus-visible),
-.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):active:not(
-    :focus-visible
-  ),
-.ch-radio-input[type="radio"][aria-disabled="false"]:active:not(
-    :focus-visible
-  ) {
-  outline: none;
+.ch-radio-input[type="radio"]:checked:not(:disabled):not(
+    [aria-disabled]
+  ):hover:after,
+.ch-radio-input[type="radio"]:checked[aria-disabled="false"]:hover:after {
+  background-color: var(--charcoal-text5-hover);
 }
-.ch-radio-input[type="radio"]:not(:disabled):not([aria-disabled]):focus-visible,
-.ch-radio-input[type="radio"][aria-disabled="false"]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px #0096fa52;
+.ch-radio-input[type="radio"]:checked:not(:disabled):not(
+    [aria-disabled]
+  ):active,
+.ch-radio-input[type="radio"]:checked[aria-disabled="false"]:active {
+  background-color: var(--charcoal-brand-press);
+}
+.ch-radio-input[type="radio"]:checked:not(:disabled):not(
+    [aria-disabled]
+  ):active:after,
+.ch-radio-input[type="radio"]:checked[aria-disabled="false"]:active:after {
+  background-color: var(--charcoal-text5-press);
 }
 .ch-radio-text {
   color: var(--charcoal-text2);

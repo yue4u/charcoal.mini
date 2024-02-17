@@ -29,17 +29,17 @@ test("TextField", async ({ mount, page }) => {
     "ch-textfield-required",
     "ch-textfield-sub-label",
     "ch-textfield-input-container",
-    null, //6. "prefix-container": prefixContainer,
-    null, //7. surround: [...prefix, ...suffix],
+    //6. "prefix-container": prefixContainer,
+    //7. surround: [...prefix, ...suffix],
     "ch-textfield-input",
-    null, //9: "suffix-container": suffixContainer,
-    null, //10: count: count,
+    //9: "suffix-container": suffixContainer,
+    //10: count: count,
     "ch-textfield-assistive-text",
   ];
 
   const base = await collector.getStyleWithCleanNames(component, cleanNames);
 
-  expect(base.browserStyles.scNames.length).toBe(12);
+  expect(base.browserStyles.scNames.length).toBe(cleanNames.length);
 
   const cssCode: Uint8Array[] = [base.code];
 
@@ -77,18 +77,12 @@ test("TextField", async ({ mount, page }) => {
               const mappedName = nextClassMap[ss[0].name];
 
               const asInput =
-                mappedName === "ch-textfield-input" &&
-                // @ts-expect-error
-                ss[0]?.name === ss[1]?.name;
+                mappedName === "ch-textfield-input-container";
 
               const asAssistiveTest =
                 mappedName === "ch-textfield-assistive-text" && ss.length === 1;
               if (!asInput && !asAssistiveTest) {
                 return [];
-              }
-
-              if (asInput) {
-                ss.shift();
               }
 
               return [
@@ -105,6 +99,5 @@ test("TextField", async ({ mount, page }) => {
       },
     }).code
   );
-
   await collector.save(className, cssCode);
 });

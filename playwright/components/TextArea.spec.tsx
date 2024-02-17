@@ -68,18 +68,13 @@ test("TextArea", async ({ mount, page }) => {
               const mappedName = nextClassMap[ss[0].name];
 
               const asContainer =
-                mappedName === "ch-textarea-container" &&
-                ss.filter((s) => s.type == "class").length > 1;
+                mappedName === "ch-textarea-container";
 
               const asAssistiveTest =
                 mappedName === "ch-textarea-assistive-text" && ss.length === 1;
 
               if (!asContainer && !asAssistiveTest) {
                 return [];
-              }
-
-              if (asContainer) {
-                ss.shift();
               }
 
               return [
@@ -97,5 +92,6 @@ test("TextArea", async ({ mount, page }) => {
     }).code
   );
 
+  
   await collector.save(className, cssCode);
 });
