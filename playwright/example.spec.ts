@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import { parse } from "node-html-parser";
-import shiki from "shiki";
 import prettier from "prettier";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { getHighlighter } from "shiki";
 
 test("example", async ({ page }, testInfo) => {
+
   const exampledPath = path.join(__dirname, "../dist/example.html");
   const charcoalMiniPath = path.join(__dirname, "../dist/charcoal.mini.css");
   const [exampleHtml, charcoalMini] = await Promise.all([
@@ -15,8 +16,10 @@ test("example", async ({ page }, testInfo) => {
 
   const example = parse(exampleHtml, { comment: true });
 
-  const highlighter = await shiki.getHighlighter({
-    theme: "css-variables",
+  const theme = "css-variables";
+  const highlighter = await getHighlighter({
+    themes: [theme],
+    langs: ["html", "css", "markdown"]
   });
 
   example.querySelectorAll("section h2").forEach((title) => {
@@ -28,8 +31,8 @@ test("example", async ({ page }, testInfo) => {
   (
     await Promise.all(
       example.querySelectorAll("pre").map(async (pre) => {
-        const query = pre.nextElementSibling.getAttribute("data-query");
-        const content = pre.nextElementSibling.getAttribute("data-content");
+        const query = pre.nextElementSibling?.getAttribute("data-query");
+        const content = pre.nextElementSibling?.getAttribute("data-content");
 
         let html: string;
         let parser = "html";
@@ -46,10 +49,13 @@ test("example", async ({ page }, testInfo) => {
             await prettier.format(parse(source, { comment: false }).outerHTML, {
               parser: "html",
             }),
-            { lang: "html" }
+            {
+              lang: "html",
+              theme,
+            }
           );
         } else if (content) {
-          const lang = pre.nextElementSibling.getAttribute("data-lang");
+          const lang = pre.nextElementSibling?.getAttribute("data-lang");
           if (lang) {
             html = highlighter.codeToHtml(
               await prettier.format(
@@ -58,18 +64,19 @@ test("example", async ({ page }, testInfo) => {
                   parser: lang,
                 }
               ),
-              { lang }
+              { lang, theme }
             );
           } else {
             throw new Error(`expect lang for ${content}`);
           }
         } else {
-          const source = pre.nextElementSibling.outerHTML;
+          const source = pre.nextElementSibling?.outerHTML;
+          if (!source) throw new Error("expect source");
           html = highlighter.codeToHtml(
             await prettier.format(parse(source, { comment: false }).outerHTML, {
               parser: "html",
             }),
-            { lang: "html" }
+            { lang: "html", theme }
           );
         }
 

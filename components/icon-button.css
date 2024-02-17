@@ -1,4 +1,5 @@
 .ch-icon-button {
+  cursor: pointer;
   appearance: none;
   color: inherit;
   text-rendering: inherit;
@@ -6,20 +7,20 @@
   word-spacing: inherit;
   font: inherit;
   text-transform: none;
-  cursor: pointer;
   background: 0 0;
   border-style: none;
   outline: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
   overflow: visible;
-}
-.ch-icon-button:focus {
-  outline: none;
 }
 .ch-icon-button:disabled,
 .ch-icon-button[aria-disabled]:not([aria-disabled="false"]) {
   cursor: default;
+}
+.ch-icon-button:focus {
+  outline: none;
 }
 .ch-icon-button {
   user-select: none;
@@ -35,35 +36,30 @@
     box-shadow 0.2s;
   display: flex;
 }
-.ch-icon-button:hover:not(:disabled):not([aria-disabled]),
-.ch-icon-button:hover[aria-disabled="false"] {
+.ch-icon-button:not(:disabled):not([aria-disabled]):hover,
+.ch-icon-button[aria-disabled="false"]:hover {
   background-color: var(--charcoal-transparent-hover);
 }
-.ch-icon-button:active:not(:disabled):not([aria-disabled]),
-.ch-icon-button:active[aria-disabled="false"] {
-  background-color: var(--charcoal-transparent-press);
-}
-.ch-icon-button:disabled,
-.ch-icon-button[aria-disabled]:not([aria-disabled="false"]) {
-  opacity: 0.32;
-}
-.ch-icon-button:not(:disabled):not([aria-disabled]):focus,
-.ch-icon-button[aria-disabled="false"]:focus,
 .ch-icon-button:not(:disabled):not([aria-disabled]):active,
 .ch-icon-button[aria-disabled="false"]:active {
+  background-color: var(--charcoal-transparent-press);
+}
+.ch-icon-button:not(:disabled):not([aria-disabled]):focus,
+.ch-icon-button[aria-disabled="false"]:focus {
   outline: none;
   box-shadow: 0 0 0 4px #0096fa52;
 }
 .ch-icon-button:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.ch-icon-button[aria-disabled="false"]:focus:not(:focus-visible),
-.ch-icon-button:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.ch-icon-button[aria-disabled="false"]:active:not(:focus-visible) {
-  outline: none;
+.ch-icon-button[aria-disabled="false"]:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 .ch-icon-button:not(:disabled):not([aria-disabled]):focus-visible,
 .ch-icon-button[aria-disabled="false"]:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px #0096fa52;
+}
+.ch-icon-button:disabled,
+.ch-icon-button[aria-disabled]:not([aria-disabled="false"]) {
+  opacity: 0.32;
 }
 .ch-icon-button.size-xs {
   width: 20px;
@@ -78,7 +74,7 @@
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface4);
 }
-.ch-icon-button.overlay:hover:not(:disabled):not([aria-disabled]),
-.ch-icon-button.overlay:hover[aria-disabled="false"] {
+.ch-icon-button.overlay:not(:disabled):not([aria-disabled]):hover,
+.ch-icon-button.overlay[aria-disabled="false"]:hover {
   background-color: var(--charcoal-surface4-hover);
 }

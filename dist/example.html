@@ -63,6 +63,7 @@
       h1 {
         text-align: center;
       }
+
       main {
         max-width: 960px;
         margin: 0 auto;
@@ -77,9 +78,11 @@
         & h2 {
           grid-column: span 2;
         }
+
         & h3 {
           grid-column: span 2;
         }
+
         & h4 {
           grid-column: span 2;
         }
@@ -92,9 +95,11 @@
           & h2 {
             grid-column: span 1;
           }
+
           & h3 {
             grid-column: span 1;
           }
+
           & h4 {
             grid-column: span 1;
           }
@@ -118,7 +123,9 @@
   </head>
 
   <body>
-    <header><h1>Charcoal.mini</h1></header>
+    <header>
+      <h1>Charcoal.mini</h1>
+    </header>
     <main>
       <section>
         <h2>import</h2>
@@ -498,7 +505,7 @@
           style="background-color: var(--shiki-color-background)"
           tabindex="0"
         ><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input-container invalid&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">input</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-textfield-input invalid&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">placeholder</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;input...&quot;</span><span style="color: var(--shiki-color-text)"> /&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"></span>
@@ -506,7 +513,7 @@
 <span class="line"><span style="color: var(--shiki-color-text)">&lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"></span></code></pre>
         <div class="ch-textfield">
-          <div class="ch-textfield-input-container">
+          <div class="ch-textfield-input-container invalid">
             <input class="ch-textfield-input invalid" placeholder="input..." />
           </div>
 
@@ -812,19 +819,17 @@
 <span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-button&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">id</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-button&quot;</span><span style="color: var(--shiki-color-text)">&gt;open modal&lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: var(--shiki-color-text)">  &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">style</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;display: none&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-dialog-container&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">      &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-dialog&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">role</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;dialog&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">        &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-body&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-header&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">            &lt;</span><span style="color: var(--shiki-token-string-expression)">h3</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-title&quot;</span><span style="color: var(--shiki-color-text)">&gt;title&lt;/</span><span style="color: var(--shiki-token-string-expression)">h3</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-align&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">            &lt;</span><span style="color: var(--shiki-token-string-expression)">p</span><span style="color: var(--shiki-color-text)">&gt;content&lt;/</span><span style="color: var(--shiki-token-string-expression)">p</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-close&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">            &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
-<span class="line"><span style="color: var(--shiki-color-text)">          &lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-dialog&quot;</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">role</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;dialog&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-body&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-header&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">h3</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-title&quot;</span><span style="color: var(--shiki-color-text)">&gt;title&lt;/</span><span style="color: var(--shiki-token-string-expression)">h3</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">        &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        &lt;</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-align&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">p</span><span style="color: var(--shiki-color-text)">&gt;content&lt;/</span><span style="color: var(--shiki-token-string-expression)">p</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        &lt;</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">class</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;ch-modal-close&quot;</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &lt;</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-function)">name</span><span style="color: var(--shiki-token-keyword)">=</span><span style="color: var(--shiki-token-string-expression)">&quot;24/Close&quot;</span><span style="color: var(--shiki-color-text)">&gt;&lt;/</span><span style="color: var(--shiki-token-string-expression)">pixiv-icon</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        &lt;/</span><span style="color: var(--shiki-token-string-expression)">button</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">      &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">    &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
 <span class="line"><span style="color: var(--shiki-color-text)">  &lt;/</span><span style="color: var(--shiki-token-string-expression)">div</span><span style="color: var(--shiki-color-text)">&gt;</span></span>
@@ -834,19 +839,17 @@
           <button class="ch-button" id="ch-modal-button">open modal</button>
 
           <div class="ch-modal" style="display: none">
-            <div class="ch-modal-dialog-container">
-              <div class="ch-modal-dialog" role="dialog">
-                <div class="ch-modal-body">
-                  <div class="ch-modal-header">
-                    <h3 class="ch-modal-title">title</h3>
-                  </div>
-                  <div class="ch-modal-align">
-                    <p>content</p>
-                  </div>
-                  <button class="ch-modal-close">
-                    <pixiv-icon name="24/Close"></pixiv-icon>
-                  </button>
+            <div class="ch-modal-dialog" role="dialog">
+              <div class="ch-modal-body">
+                <div class="ch-modal-header">
+                  <h3 class="ch-modal-title">title</h3>
                 </div>
+                <div class="ch-modal-align">
+                  <p>content</p>
+                </div>
+                <button class="ch-modal-close">
+                  <pixiv-icon name="24/Close"></pixiv-icon>
+                </button>
               </div>
             </div>
           </div>
